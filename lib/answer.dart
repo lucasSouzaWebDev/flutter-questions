@@ -15,8 +15,8 @@ class Answer extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.blue),
           foregroundColor: MaterialStateProperty.all(Colors.white)
         ),
-        child: Text(text),
         onPressed: onSelected,
+        child: Text(text),
       ),
     );
   }

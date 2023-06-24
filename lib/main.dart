@@ -6,6 +6,7 @@ void main() => runApp(QuestionApp());
 
 class _QuestionAppState extends State<QuestionApp> {
   var _questionSelected = 0;
+  var _totalGrade = 0;
   final _questions = const [
     {
       'text': 'Qual é a sua cor favorita?',
@@ -36,10 +37,11 @@ class _QuestionAppState extends State<QuestionApp> {
     },
   ];
 
-  void _answer() {
+  void _answer(int grade) {
     if (hasSelectedQuestion) {
       setState(() {
         _questionSelected++;
+        _totalGrade += grade;
       });
     }
     print('Pergunta respondida!');
@@ -60,8 +62,8 @@ class _QuestionAppState extends State<QuestionApp> {
                 questionSelected: _questionSelected,
                 answer: _answer,
               )
-            : Result(),
-        backgroundColor: Color(0xFFFFFFFF),
+            : Result(_totalGrade),
+        backgroundColor: Colors.white,
       ),
     );
   }
