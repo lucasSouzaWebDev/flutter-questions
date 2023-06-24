@@ -27,9 +27,9 @@ class _QuestionAppState extends State<QuestionApp> {
         body: Column(
           children: [
             Question(questions[_questionSelected]),
-            Answer('Resposta 1'),
-            Answer('Resposta 2'),
-            Answer('Resposta 3'),
+            Answer('Resposta 1', _answer),
+            Answer('Resposta 2', _answer),
+            Answer('Resposta 3', _answer),
           ],
         ),
         backgroundColor: Color(0xFFFFFFFF),
